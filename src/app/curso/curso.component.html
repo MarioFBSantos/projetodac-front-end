@@ -23,8 +23,8 @@
             <td>{{course.titulo}}</td>
             <td>{{course.descricao}}</td>
             <td>{{course.data_registro | mask: '0000-00-00'}}</td>
-            <td><button  (click)="onView(course.id)" style="background: transparent; border: none;"><img src="./assets/view.svg" alt="View"></button></td>
-            <td><button class="btn-excluir" name={{course.titulo}} value={{course.id}}
+            <td><button  (click)="onView(course.id)" style="background: transparent; border: none;" id="editarCurso"><img src="./assets/view.svg" alt="View"></button></td>
+            <td><button class="btn-excluir" name={{course.titulo}} value={{course.id}} id="deleteCurso"
                 (click)="openPopup(course.id, course.titulo)" style="background: transparent; border: none;"><img
                   src="./assets/delete.svg" alt="Delete" data-bs-toggle="modal"
                   data-bs-target="#modalExcluir" /></button></td>
@@ -35,7 +35,7 @@
   </div>
   <div class="row ">
     <div class="col d-flex justify-content-center">
-      <a type="button" class="btn btn-outline-secondary" routerLink="add">Cadastrar Curso</a>
+      <a type="button" class="btn btn-outline-secondary" routerLink="add" id="cadastraCurso">Cadastrar Curso</a>
     </div>
   </div>
 
@@ -59,7 +59,7 @@
         <div class="modal-footer text-center">
           <button type="button" class="btn btn-secondary text-center" data-dismiss="modal"
             (click)="closePopup()">Cancelar</button>
-          <button type="button" class="btn btn-danger" (click)="deleteCursos()">Excluir</button>
+          <button type="button" class="btn btn-danger" (click)="deleteCursos()" id="confirmeExcluirCurso">Excluir</button>
         </div>
       </div>
     </div>
