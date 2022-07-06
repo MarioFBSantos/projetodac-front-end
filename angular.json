@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "ee36fab0-2fe1-41ff-9d6a-7a8b5037b2b7"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -98,7 +101,7 @@
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
-          "options": { "baseHref": "/projetodac-front-end/" }
+          "options": { "baseHref": "" }
         }
       }
     }

@@ -25,8 +25,8 @@
             <td>{{author.sobrenome}}</td>
             <td>{{author.email}}</td>
             <td>{{author.afiliacao}}</td>
-            <td><button (click)="onView(author.id)" style="background: transparent; border: none;"><img src="../../assets/view.svg" alt="View"></button></td>
-            <td><button class="btn-excluir" name={{author.nome}} value={{author.id}}
+            <td><button (click)="onView(author.id)" style="background: transparent; border: none;" id="viewAutor"><img src="../../assets/view.svg" alt="View"></button></td>
+            <td><button class="btn-excluir" name={{author.nome}} value={{author.id}} id="deleteAutor"
                 (click)="openPopup(author.id, author.nome, author.sobrenome)" style="background: transparent; border: none;"><img
                   src="../../assets/delete.svg" alt="Delete" data-bs-toggle="modal"
                   data-bs-target="#modalExcluir" /></button></td>
@@ -39,7 +39,7 @@
   </div>
   <div class="row ">
     <div class="col d-flex justify-content-center">
-      <a type="button" class="btn btn-outline-secondary" routerLink="add">Cadastrar Autor</a>
+      <a type="button" class="btn btn-outline-secondary" routerLink="add" id="cadastrar">Cadastrar Autor</a>
     </div>
   </div>
 
@@ -63,7 +63,7 @@
         <div class="modal-footer text-center">
           <button type="button" class="btn btn-secondary text-center" data-dismiss="modal"
             (click)="closePopup()">Cancelar</button>
-          <button type="button" class="btn btn-danger" (click)="deleteAutor()">Excluir</button>
+          <button type="button" class="btn btn-danger" (click)="deleteAutor()" id="confirmDelete">Excluir</button>
         </div>
       </div>
     </div>
