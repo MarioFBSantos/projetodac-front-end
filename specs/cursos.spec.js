@@ -1,32 +1,21 @@
 const { browser } = require("protractor");
 
-var autorSE = require('../pageObjects/cadastraAutor.po.js');
 var cursoSE = require('../pageObjects/crudCursos.po.js');
 
 const { expect } = require('chai');
 
-describe('CRUD AUTOR:', function() {
+describe('CRUD CURSOS:', function() {
 
 beforeAll( function() {
-  autorSE.cadastro();
-  autorSE.editar();
-  autorSE.deletar();
+
   cursoSE.cadastro();
   cursoSE.editar();
   cursoSE.deletar();
- });
+  cursoSE.cadastroSite();
+  cursoSE.editarSite();
+  cursoSE.deletarSite();
 
- // ------------ crud autor -------------------------------
-it('Realizar cadastro do autor', async function(){
-await autorSE.cadastro();
-})
-it('Realizar edição do autor', async function(){
-  await autorSE.editar();
-})
-it('Realizar deleção do autor', async function(){
-  await autorSE.deletar();
-})
-// ----------------------------------------------------------
+ });
 // ------------ crud curso -------------------------------
 it('Realizar cadastro do curso', async function(){
   await cursoSE.cadastro();
@@ -37,11 +26,16 @@ it('Realizar edição do curso', async function(){
 it('Realizar deleção do curso', async function(){
   await cursoSE.deletar();
 })
+it('Realizar cadastro do curso', async function(){
+  await cursoSE.cadastroSite();
+  })
+it('Realizar edição do curso', async function(){
+  await cursoSE.editarSite();
+})
+it('Realizar deleção do curso', async function(){
+  await cursoSE.deletarSite();
+})
  // ----------------------------------------------------------
-
-  // it('Realizar deleção do autor', async function(){
-  //   await autorSE.deletar();
-  // })
 
 // it('Realizar Login com dados válidos', async function(){
 // await loginPage.etEmail.clear();

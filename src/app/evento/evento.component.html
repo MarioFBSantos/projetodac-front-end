@@ -25,8 +25,8 @@
             <td>{{events.descricao}}</td>
             <td>{{events.data_criacao | mask: '0000-00-00'}}</td>
             <td>{{events.data_fim | mask: '0000-00-00'}}</td>
-            <td><button (click)="onView(events.id)" style="background: transparent; border: none;"><img src="./assets/view.svg" alt="View" ></button></td>
-            <td><button class="btn-excluir" name={{events.titulo}} value={{events.id}}
+            <td><button (click)="onView(events.id)" style="background: transparent; border: none;" id="editarEventos"><img src="./assets/view.svg" alt="View" ></button></td>
+            <td><button class="btn-excluir" name={{events.titulo}} value={{events.id}} id="deleteEventos"
                 (click)="openPopup(events.id, events.titulo)" style="background: transparent; border: none;"><img
                   src="./assets/delete.svg" alt="Delete" data-bs-toggle="modal"
                   data-bs-target="#modalExcluir" /></button></td>
@@ -37,7 +37,7 @@
   </div>
   <div class="row ">
     <div class="col d-flex justify-content-center">
-      <a type="button" class="btn btn-outline-secondary" routerLink="add">Cadastrar Evento</a>
+      <a type="button" class="btn btn-outline-secondary" routerLink="add" id="cadastrarEvento">Cadastrar Evento</a>
     </div>
   </div>
 
@@ -61,7 +61,7 @@
         <div class="modal-footer text-center">
           <button type="button" class="btn btn-secondary text-center" data-dismiss="modal"
             (click)="closePopup()">Cancelar</button>
-          <button type="button" class="btn btn-danger" (click)="deleteEventos()">Excluir</button>
+          <button type="button" class="btn btn-danger" (click)="deleteEventos()" id="confirmeExcluirEventos">Excluir</button>
         </div>
       </div>
     </div>

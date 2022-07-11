@@ -89,6 +89,7 @@
         </div>
         <div class="mb-3 text-center">
           <button
+            id="editRec"
             type="button"
             class="btn btn-warning align-center mx-2"
             (click)="onEdit()"
@@ -109,7 +110,7 @@
           >Deseja associar a uma coleção existente?</label
         >
         <select
-          
+
           [(ngModel)]="colecao"
           class="form-select"
           id="selectColecao"
@@ -174,7 +175,7 @@
             </select>
           </div>
           <div class="mb-3 text-center">
-            <button type="submit" class="btn btn-dark align-center">
+            <button id="salvarEditRecurso" type="submit" class="btn btn-dark align-center">
               Salvar
             </button>
           </div>

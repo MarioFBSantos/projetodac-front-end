@@ -26,7 +26,7 @@ export class RecursoAddComponent implements OnInit {
   associarAutor = false;
   private readonly notifier: NotifierService;
 
-  
+
   constructor(
     private _autorService: AutorService,
     private formBuilder: FormBuilder,
@@ -109,16 +109,17 @@ export class RecursoAddComponent implements OnInit {
             .updateRecurso(this.recursoId, this.form.value)
             .subscribe(
               (success) => {
+                console.log('sucesso submit')
                 this._location.back();
                 this.notifier.notify('success', "Recurso alterado com sucesso!");
               },
-              (error) => console.log(error),
+              (error) => console.log(error, 'aaaaaaaaaaaaaaaaaaaa'),
               () => console.log('request OK')
             );
         } else {
           console.log('submit: ' + this.palavrasChave);
           this.form.patchValue({ palavras_chave: this.palavrasChave });
-          this._recursoService          
+          this._recursoService
             .saveRecurso(this.autorId, this.form.value)
             .subscribe(
               (success) => {
@@ -228,7 +229,7 @@ export class RecursoAddComponent implements OnInit {
     this.palavrasChave.push(palavra);
     console.log(this.palavrasChave);
     this.inputPalavras.nativeElement.value = '';
-    let notifica = "Palavra: " +palavra+ " adicionada com sucesso!" 
+    let notifica = "Palavra: " +palavra+ " adicionada com sucesso!"
     this.notifier.notify('success', notifica);
   }
 

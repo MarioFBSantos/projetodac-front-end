@@ -1,6 +1,6 @@
 <div class="container bg-light">
   <app-navbar></app-navbar>
-  
+
   <div class="row"></div>
   <div class="row d-flex overflow-auto mb-5">
     <div class="col d-flex justify-content-center">
@@ -20,6 +20,7 @@
           >
             <option>Selecione</option>
             <option
+              id="option{{author.id}}"
               *ngFor="let author of autores"
               value="{{ author.id }}"
               (click)="onChange(author.id)"
@@ -126,7 +127,7 @@
             class="form-control"
             id="dataregistroInput"
             formControlName="data_registro"
-            
+
           />
         </div>
         <div class="mb-3">
@@ -184,7 +185,7 @@
         >
           Voltar
         </button>
-          <button type="submit" class="btn btn-dark align-center mx-2">
+          <button type="submit" class="btn btn-dark align-center mx-2" id="salvarRecurso">
             Salvar
           </button>
         </div>

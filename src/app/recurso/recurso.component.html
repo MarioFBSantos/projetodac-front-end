@@ -29,8 +29,8 @@
             <td>{{resourse.data_criacao | mask: '0000-00-00'}}</td>
             <td>{{resourse.data_registro | mask: '0000-00-00'}}</td>
             <td>{{resourse.palavras_chave.join(', ')}}</td>
-            <td><button (click)="onView(resourse.id)" style="background: transparent; border: none;"><img src="./assets/view.svg" alt="View"></button></td>
-            <td><button class="btn-excluir" name={{resourse.titulo}} value={{resourse.id}}
+            <td><button (click)="onView(resourse.id)" style="background: transparent; border: none;" id="editRecurso"><img src="./assets/view.svg" alt="View"></button></td>
+            <td><button class="btn-excluir" name={{resourse.titulo}} value={{resourse.id}} id="deleteRecurso"
                 (click)="openPopup(resourse.id, resourse.titulo)" style="background: transparent; border: none;"><img
                   src="./assets/delete.svg" alt="Delete" data-bs-toggle="modal"
                   data-bs-target="#modalExcluir" /></button></td>
@@ -45,7 +45,7 @@
   </div>
   <div class="row ">
     <div class="col d-flex justify-content-center">
-      <a type="button" class="btn btn-outline-secondary" routerLink="add">Cadastrar recurso</a>
+      <a type="button" class="btn btn-outline-secondary" id="cadastrarRecurso" routerLink="add">Cadastrar recurso</a>
     </div>
   </div>
 
